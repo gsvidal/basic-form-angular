@@ -1,0 +1,125 @@
+.button {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid white;
+  background: url("../assets/icons/trash.svg") center/cover no-repeat;
+  cursor: pointer;
+  &:hover {
+    filter: invert(13%) sepia(86%) saturate(6645%) hue-rotate(359deg) brightness(99%) contrast(114%);
+  }
+}
+
+.pokemon__name {
+  display: inline-block;
+}
+
+.pokemon__card-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 15px;
+  @media screen and (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pokemon__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  padding: 20px;
+  margin: 10px;
+  background-color: rgb(255, 222, 222);
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 5px;
+}
+
+.pokemon--electric {
+  background-color: #fff9aa;
+}
+.pokemon--water {
+  background-color: #aae1ff;
+}
+.pokemon--fire {
+  background-color: #ffc8aa;
+}
+
+.message-error {
+  color: red;
+  font-weight: 700;
+  display: none;
+  transition: all linear .25s;
+  &.invalid {
+    display: inline;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid rgb(248, 175, 80);
+  border-radius: 10px;
+  background-color:rgb(255, 253, 239);
+  & input {
+    padding: 5px;
+  }
+  & .buttons-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    & button {
+      padding: 8px 12px;
+      margin: 10px;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      background-color: rgb(63, 56, 126);
+      transition: background-color linear .3s;
+      &.disabled {
+        background-color: rgb(164, 164, 167);
+        cursor: not-allowed;
+      }
+    }
+  }
+  & .error-message {
+    position: absolute;
+    top: 31px;
+    left: 130px;
+    width: 100px;
+    margin: 0;
+    margin-top: 5px;
+    font-size: 10px;
+    color: rgb(200, 29, 29);
+    font-weight: 700;
+    opacity: 0;
+    transition: all linear .1s;
+    &.invalid {
+      transition: all linear .6s;
+      opacity: 1;
+    }
+  }
+}
+
+.input-group {
+  position: relative;
+  width: 70%;
+  padding: 10px 0 0;
+  margin: 26px 0;
+  & input  {
+    position: absolute;
+    top: 5px;
+    left: 130px;
+    &::placeholder {
+      color:rgb(184, 184, 184)
+    }
+  }
+}
